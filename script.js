@@ -1,4 +1,4 @@
-function submit_click()
+    function submit_click()
   {
     const form = document.getElementById("form1")
 
@@ -28,13 +28,6 @@ let country = form.elements['country']
       window.alert("Enter date");
       return false;
     }
-    if(country.value=="")
-    {
-      console.log("country is empty");
-      window.alert("Enter country");
-      country.focus();
-      return false;
-    }
     if(address.value=="")
     {
       console.log("address is empty");
@@ -42,10 +35,15 @@ let country = form.elements['country']
       address.focus();
       return false;
     }
-    else {
+    if(country.value=="")
+    {
+      console.log("country is empty");
+      window.alert("Enter country");
+      country.focus();
+      return false;
+    }
+    else { 
     alert('Hi '+fname.value+" "+lname.value+"\n"+"Wish me on "+date.value+"\n"+"Send post to "+address.value+"\n"+"I am from "+country.value)
     }
-    //return true;
+    return true;
   }
-
-

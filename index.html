@@ -9,7 +9,7 @@
 </head>
 
 <body>
-  <form id="form1" onclick="return submit_click()">
+  <form id="form1" onsubmit="return submit_click()" method="post">
   <h1>Registration Form</h1>
   <table>
 
@@ -38,18 +38,20 @@
       <td>
           <select id="country" name="country">
             <option style="display:none">
-            <option value="Africa">Africa</option>
-            <option value="US">US</option>
-            <option value="France">France</option>
-            <option value="India">India</option>
+    <option value="Africa">Africa</option>
+    <option value="US">US</option>
+    <option value="France">France</option>
+    <option value="India">India</option>
       </select>
       </td>
     </tr>
 
   </table>
-    
-  <button id=button type="submit">Submit</button>
   <script src="script.js"></script>
+  <input type="submit" 
+                       value="Submit" name="Submit" />
+   
+
   </form>
 </body>
 
