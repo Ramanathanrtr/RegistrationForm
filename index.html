@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html>
 
 <head>
@@ -9,28 +9,35 @@
 </head>
 
 <body>
-  <form id="form1" onsubmit="return submit_click()" method="post">
+<!--   <form id="form1" onsubmit="return submit_click()" method="post"> -->
+  <form id="form1">
   <h1>Registration Form</h1>
   <table>
 
     <tr>
-    <td>First Name:</td>
-      <td><input type="text" id="firstname" placeholder="First Name" @required ></td>
+      <td>First Name:</td>
+      <td><input type="text" id="firstname" placeholder="First Name" pattern="[a-zA-Z]{1,10}" title="1-10 alphabets only" required></td>
     </tr>
 
     <tr>
       <td>Last Name:</td>
-      <td><input type="text" id="lastname" placeholder="Last Name" @required></td>
+      <td><input type="text" id="lastname" placeholder="Last Name" pattern="[a-zA-Z]{1,10}" title="1-10 alphabets only" required></td>
     </tr>
     
     <tr>
       <td>Date of Birth:</td>
-      <td><input type="date" id=datetime @required></td>
+      <td><input type="date" id=datetime min="1970-01-01" max="2004-12-31" required></td>
+    </tr>
+
+    <tr>
+      <td>Pincode:</td>
+      <td><input type="text" id=pincode placeholder="Pincode" pattern="[0-9]{6}" required></td>
+      <td><button type=button onclick="getArea()">Get Area</button></td>
     </tr>
     
     <tr>
       <td>Address:</td>
-      <td><textarea id=addresstext rows=10 cols=20 placeholder="Address" @required></textarea></td>
+      <td><textarea id=addresstext rows=10 cols=20 placeholder="Address" required></textarea></td>
     </tr>
 
     <tr>
@@ -46,12 +53,24 @@
       </td>
     </tr>
 
+    <tr>
+      <td>BackGround Color:</td>
+    <td>
+        <select id="color" name="color" onchange="setBackColor()">
+    <option style="display:none">
+    <option value="Blue">Blue</option>
+    <option value="red">red</option>
+    <option value="Green">Green</option>
+    <option value="Yellow">Yellow</option>
+  </select>
+    </td>
+    </tr>
+
   </table>
   <script src="script.js"></script>
-  <input type="submit" 
-                       value="Submit" name="Submit" />
-   
-
+    <button type="button" onclick="submit_click()">Submit</button>
+<!--   <input type="submit"  -->
+<!--                        value="Submit" name="Submit" /> -->
   </form>
 </body>
 
